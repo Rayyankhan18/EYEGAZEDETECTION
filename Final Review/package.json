@@ -1,0 +1,62 @@
+{
+    "name": "gaze-detection-limbo",
+    "version": "2.0.3",
+    "description": "Detect the user's gaze direction using machine learning, to control interfaces",
+    "main": "dist/index.js",
+    "license": "GNU",
+    "author": "INFINITEEYES",
+    "engines": {
+        "node": ">=8.9.0"
+    },
+    "dependencies": {
+        "@tensorflow-models/face-landmarks-detection": "0.0.1",
+        "@tensorflow/tfjs-backend-webgl": "2.8.4",
+        "@tensorflow/tfjs-converter": "2.8.4",
+        "@tensorflow/tfjs-core": "2.8.4"
+    },
+    "scripts": {
+        "watch": "cross-env NODE_ENV=development parcel index.html --no-hmr --target browser",
+        "watch:demo": "cross-env NODE_ENV=development parcel demo/keyboard/index.html --no-hmr --target browser",
+        "build": "cross-env NODE_ENV=production parcel build index.js --global gaze-detection",
+        "build-demo": "cross-env NODE_ENV=production parcel build demo/keyboard/index.html --public-url ./"
+    },
+    "browser": {
+        "crypto": false
+    },
+    "keywords": [
+        "tfjs",
+        "machine learning",
+        "tensorflow.js",
+        "creative coding",
+        "tensorflow",
+        "javascript"
+    ],
+    "devDependencies": {
+        "@babel/core": "7.7.5",
+        "@babel/plugin-transform-runtime": "^7.7.6",
+        "@babel/preset-env": "^7.7.6",
+        "babel-plugin-external-helpers": "^6.22.0",
+        "babel-preset-env": "^1.7.0",
+        "clang-format": "~1.2.2",
+        "cross-env": "^5.2.0",
+        "eslint": "^4.19.1",
+        "parcel-bundler": "^1.12.4"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MOQA-01/20-INFINITEEYES.git"
+    },
+    "eslintConfig": {
+        "env": {
+            "es6": true
+        },
+        "parserOptions": {
+            "ecmaVersion": 8,
+            "sourceType": "module"
+        }
+    },
+    "type": "module",
+    "eslintIgnore": [
+        "dist/"
+    ]
+}
